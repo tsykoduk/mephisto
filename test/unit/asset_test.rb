@@ -76,7 +76,7 @@ class AssetTest < ActiveSupport::TestCase
     process_upload
     now   = Time.now.utc
     asset = Asset.find(:first, :conditions => 'id > 7', :order => 'created_at')
-    assert_equal File.join('/assets', now.year.to_s, now.month.to_s, now.day.to_s, 'logo.png'), asset.public_filename
+    assert_equal File.join('/assets', asset.site.host, now.year.to_s, now.month.to_s, now.day.to_s, 'logo.png'), asset.public_filename
   ensure
     Site.multi_sites_enabled = false
   end
