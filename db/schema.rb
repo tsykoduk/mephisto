@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081223221228) do
+ActiveRecord::Schema.define(:version => 20090216033350) do
 
   create_table "assets", :force => true do |t|
     t.string   "content_type"
@@ -166,20 +166,26 @@ ActiveRecord::Schema.define(:version => 20081223221228) do
     t.string  "subtitle"
     t.string  "email"
     t.text    "ping_urls"
-    t.integer "articles_per_page",                 :default => 15
+    t.integer "articles_per_page",                            :default => 15
     t.string  "host"
     t.boolean "approve_comments"
     t.integer "comment_age"
     t.string  "timezone"
-    t.string  "filter",                            :default => "textile_filter"
+    t.string  "filter",                                       :default => "textile_filter"
     t.string  "permalink_style"
     t.string  "search_path"
     t.string  "tag_path"
     t.string  "tag_layout"
     t.string  "current_theme_path"
-    t.string  "akismet_key",        :limit => 100
+    t.string  "akismet_key",                   :limit => 100
     t.string  "akismet_url"
-    t.string  "lang",                              :default => "en-US",          :null => false
+    t.string  "lang",                                         :default => "en-US",          :null => false
+    t.string  "sitemap_section_changefreq"
+    t.float   "sitemap_section_priority"
+    t.float   "sitemap_article_priority"
+    t.string  "sitemap_article_changefreq"
+    t.string  "sitemap_home_changefreq"
+    t.float   "sitemap_home_article_priority"
   end
 
   add_index "sites", ["host"], :name => "index_sites_on_host"

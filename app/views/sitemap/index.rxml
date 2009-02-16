@@ -10,11 +10,11 @@ xml.urlset(:xmlns => "http://www.sitemaps.org/schemas/sitemap/0.9") do
                       :path       => section.to_url)
       xml.lastmod w3c_date(section.articles.find_by_position.updated_at)
       if "home" == section.name.downcase 
-  #      xml.changefreq daily
-  #      xml.priority 1
+       xml.changefreq @site.sitemap_home_changefreq
+        xml.priority @site.sitemap_home_article_priority
       else 
-  #      xml.changefreq daily
-  #      xml.priority .75        
+        xml.changefreq @site.sitemap_section_changefreq
+        xml.priority @site.sitemap_section_priority        
       end
     end
   end
@@ -26,8 +26,8 @@ xml.urlset(:xmlns => "http://www.sitemaps.org/schemas/sitemap/0.9") do
                       :controller => "mephisto",
                       :path       => site.permalink_for(article).gsub!(/^\//, ''))
       xml.lastmod w3c_date(article.updated_at)
-  #    xml.changefreq  @article_frequency
-  #    xml.priority @article_priority
+      xml.changefreq  @site.sitemap_article_changefreq
+      xml.priority @site.sitemap_article_priority
     end
   end
   
