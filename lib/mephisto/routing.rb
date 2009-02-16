@@ -33,6 +33,8 @@ module Mephisto
       # Where oh where is my xmlrpc code?
       # map.connect 'xmlrpc', :controller => 'backend', :action => 'xmlrpc' 
       
+      map.connect '/sitemap.xml', :controller => 'sitemap', :action => 'index' 
+      
       map_from_plugins(map)
       
       map.connect(':controller/:action/:id/:version',
