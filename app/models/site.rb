@@ -280,10 +280,25 @@ class Site < ActiveRecord::Base
     end
 
     def set_default_attributes
-      self.permalink_style = ':year/:month/:day/:permalink' if permalink_style.blank?
-      self.search_path     = 'search' if search_path.blank?
-      self.tag_path        = 'tags'   if tag_path.blank?
-      [:permalink_style, :search_path, :tag_path].each { |a| send(a).downcase! }
+      self.permalink_style                = ':year/:month/:day/:permalink' if permalink_style.blank?
+      self.search_path                    = 'search' if search_path.blank?
+      self.tag_path                       = 'tags'   if tag_path.blank?
+      self.sitemap_home_changefreq        = 'daily' if sitemap_home_changefreq.blank?
+      self.sitemap_home_article_priority  = '.5' if sitemap_home_article_priority.blank?
+      self.sitemap_section_changefreq     = 'daily' if sitemap_section_changefreq.blank? 
+      self.sitemap_section_priority       = '.5' if sitemap_section_priority.blank?
+      self.sitemap_article_changefreq     = 'daily' if sitemap_article_changefreq.blank?
+      self.sitemap_article_priority       = '.5' if sitemap_article_priority.blank?
+      [:permalink_style, 
+        :search_path, 
+        :tag_path,
+        :sitemap_home_changefreq,
+        :sitemap_section_changefreq,
+        :sitemap_article_changefreq,
+        ].each { |a| send(a).downcase! }
+        [:sitemap_home_article_priority,
+          :sitemap_section_priority,
+          :sitemap_article_priority,].each { |a| send(a) }
       self.timezone_name = 'UTC' if read_attribute(:timezone).blank?
       if new_record?
         self.approve_comments = false unless approve_comments?

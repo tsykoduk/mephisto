@@ -6,6 +6,7 @@
     <li><%= link_to "Spam Prevention", '#spam' %></li>
     <li><%= link_to "Comments", '#spam' %></li>
     <li><%= link_to "Publishing", '#publish' %></li>
+		<li><%= link_to "Sitemaps", '#sitemap' %></li>
     <% if ActionController::Base.perform_caching -%>
     <li><%= link_to 'Caches', :controller => '/admin/cached_pages' %></li>
     <% end -%>
@@ -62,6 +63,26 @@
       <label><%= f.check_box 'approve_comments' %> Approve and publish all comments automatically.</label>
     </dt>
   </dl>
+</div>
+
+<div id="sitemap" class"setgroup">
+	<h3>Sitemap Settings</h3>
+	<p>The sitemap is located at <code>/sitemap.xml</code>. You can use the following to set the sitemap's 
+		suggestions to search engines. for more information, see <%= link_to 'sitemap.org', 'http://sitemap.org'%>.</p>
+	<dl class="setform">
+		<dt><label>Home Change Frequency</label></dt>
+		<dd><%= f.text_field :sitemap_home_changefreq %></dd>
+		<dt><label>Home Article Priority</label></dt>
+		<dd><%= f.text_field :sitemap_home_article_priority %></dd>
+		<dt><label>Section Change Frequency</label></dt>
+		<dd><%= f.text_field :sitemap_section_changefreq %></dd>
+		<dt><label>Section Priority</label></dt>
+		<dd><%= f.text_field :sitemap_section_priority %></dd>
+		<dt><label>Article Change Frequency</label></dt>
+		<dd><%= f.text_field :sitemap_article_changefreq %></dd>
+		<dt><label>Article Priority</label></dt>
+		<dd><%= f.text_field :sitemap_article_priority %></dd>
+	</dl>
 </div>
 
 <div id="publish" class="setgroup">
