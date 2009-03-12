@@ -303,24 +303,21 @@ class XmlLoginProxy < BaseLoginProxy
     end
 end
 
-# The plugin tests appear to be written against an old version of the
-# plugin API, and not against Sven's new engine-based API.  We want to
-# update these tests in the future.
-#module Mephisto
-#  module Plugins
-#    class PluginWhammyJammy < Mephisto::Plugin
-#      option :foo, 'one'
-#      option :bar, 2
-#      option :baz, [3]
-#    end
-#    
-#    class FooBar < Mephisto::Plugin
-#    end
-#    
-#    class NonPlugin
-#    end
-#  end
-#end
+module Mephisto
+  module Plugins
+    class PluginWhammyJammy < Mephisto::Plugin
+      option :foo, 'one'
+      option :bar, 2
+      option :baz, [3]
+    end
+   
+    class FooBar < Mephisto::Plugin
+    end
+   
+    class NonPlugin
+    end
+  end
+end
 
 begin
   require 'ruby-debug'
