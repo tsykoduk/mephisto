@@ -23,7 +23,7 @@ class ActionController::Dispatcher
     end
   end
   
-  alias_method_chain :cleanup_application, :plugins
+  # alias_method_chain :cleanup_application, :plugins
 end
 
 ActionController::Dispatcher.register_liquid_tags
@@ -34,5 +34,3 @@ ActiveSupport::Inflector.inflections do |inflect|
   #inflect.irregular 'person', 'people'
   inflect.uncountable %w( audio )
 end
-
-Engines::Plugin::Config.set_table_name 'mephisto_plugins'
