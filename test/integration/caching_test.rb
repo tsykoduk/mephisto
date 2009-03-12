@@ -17,7 +17,7 @@ class ActionController::Integration::Session
 
   def assert_redirected_to(url)
     assert redirect?
-    assert_equal url, interpret_uri(headers["location"].first)
+    assert_equal url, interpret_uri(headers["location"])
   end
 
   def assert_redirected_to!(url)
