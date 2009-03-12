@@ -65,5 +65,6 @@ Class.class_eval do
   alias_method_chain :inherited, :mixins
 end
 
+require 'expiring_attr_reader'
+Module.send :include, ExpiringAttrReader
 require 'mephisto/plugin'
-

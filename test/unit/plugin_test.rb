@@ -1,6 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/../test_helper')
 
-class PluginTest < Test::Unit::TestCase
+class PluginTest < ActiveSupport::TestCase
   fixtures :mephisto_plugins
 
   def test_should_create_plugin_name
