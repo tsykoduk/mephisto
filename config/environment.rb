@@ -75,8 +75,8 @@ Rails::Initializer.run do |config|
 
   # We're slowly moving the contents of vendor and vender/plugins into
   # vendor/gems by adding config.gem declarations.
-  config.gem "rspec", :lib => false, :version => ">= 1.1.99.12" 
-  config.gem "rspec-rails", :lib => false, :version => ">= 1.1.99.12"
+  config.gem "rspec", :lib => false, :version => ">= 1.1.99.14" 
+  config.gem "rspec-rails", :lib => false, :version => ">= 1.1.99.14"
   config.gem 'RedCloth', :version => '3.0.4', :lib => 'redcloth'
   config.gem 'BlueCloth', :version => '>= 1.0.0', :lib => 'bluecloth'
   config.gem 'rubyzip', :version => '>= 0.9.1', :lib => 'zip/zipfilesystem'
