@@ -13,7 +13,6 @@ RAILS_GEM_VERSION = '2.3.1' unless defined? RAILS_GEM_VERSION
 
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
-require File.join(File.dirname(__FILE__), '../vendor/plugins/engines/boot')
 require File.join(File.dirname(__FILE__), '../lib/mephisto/plugin')
 
 # Don't load the application when running rake db:* tasks, because doing so
