@@ -3,7 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../test_helper')
 # Temporarily disabled--see the comment on PluginWhammyJammy in
 # test_helper.rb for an explanation.
 
-#class PluginTest < Test::Unit::TestCase
+#class PluginTest < ActiveSupport::TestCase
 #  fixtures :mephisto_plugins
 #
 #  def test_should_create_plugin_name

@@ -3,7 +3,7 @@ require File.dirname(__FILE__) + '/../test_helper'
 # Re-raise errors caught by the controller.
 class FeedController; def rescue_action(e) raise e end; end
 
-class FeedControllerTest < Test::Unit::TestCase
+class FeedControllerTest < ActiveSupport::TestCase
   fixtures :contents, :sections, :assigned_sections, :sites
   
   def setup
