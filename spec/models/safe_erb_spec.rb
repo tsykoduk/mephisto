@@ -4,7 +4,7 @@ require File.dirname(__FILE__) + '/../spec_helper'
 describe ActionView::Template do
   before :each do
     path = File.join(File.dirname(__FILE__), 'safe_erb_template.html.erb')
-    @template = ActionView::Template.new(path)
+    @template = ActionView::Template.new(path, Rails.root)
     @view = ActionView::Base.new
   end
 
