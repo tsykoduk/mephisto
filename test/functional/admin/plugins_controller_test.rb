@@ -3,7 +3,7 @@ require File.dirname(__FILE__) + '/../../test_helper'
 # Temporarily disabled--see the comment on PluginWhammyJammy in
 # test_helper.rb for an explanation.
 
-#class Admin::PluginsControllerTest < Test::Unit::TestCase
+#class Admin::PluginsControllerTest < ActiveSupport::TestCase
 #  fixtures :contents, :content_versions, :sections, :assigned_sections, :users, :sites, :tags, :taggings, :memberships
 #  @@test_plugin_dir = RAILS_PATH + 'test/fixtures/plugins/lib'
 #  @@plugin_dir      = RAILS_PATH + 'vendor/plugins/mephisto_test_plugin'
