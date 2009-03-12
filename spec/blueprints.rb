@@ -1,5 +1,4 @@
 require 'faker'
-require 'tzinfo'
 
 Sham.title { Faker::Lorem.sentence }
 Sham.host  { Faker::Internet.domain_name }
