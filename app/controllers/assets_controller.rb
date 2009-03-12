@@ -1,5 +1,4 @@
 class AssetsController < ApplicationController
-  session :off
   caches_page_with_references :show
   def show
     file         = Pathname.new([params[:path], params[:ext]] * '.')
