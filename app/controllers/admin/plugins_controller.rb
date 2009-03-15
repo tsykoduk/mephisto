@@ -19,6 +19,6 @@ class Admin::PluginsController < Admin::BaseController
   
   protected
     def find_plugin
-      @plugin = Mephisto.plugins[params[:id]]
+      @plugin = Mephisto::Plugin[params[:id]]
     end
 end
