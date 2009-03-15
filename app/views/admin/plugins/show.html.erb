@@ -23,7 +23,7 @@
 <div id="page-nav">
   <ul id="act-nav" class="clear">
 	<li>
- 	 	<%= link_to 'Restore Defaults', :action => 'destroy', :id => @plugin.plugin_name %>
+ 	 	<%= link_to 'Restore Defaults', { :action => 'destroy', :id => @plugin.plugin_name }, { :method => :delete } %>
 	</li>
 	<li>
  	 	<%= link_to 'Back to Plugins', :action => 'index' %>
