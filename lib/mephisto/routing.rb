@@ -52,17 +52,7 @@ module Mephisto
     class << self
       expiring_attr_reader :redirections,  '{}'
     end
-    
-    def self.map_from_plugins(map)
-      if map.respond_to?(:from_plugin)
-        Engines.plugins.each { |plugin| map.from_plugin(plugin.name) }
-      else
-        # This happens when running 'rake gems' under Rails 2.2 when some
-        # gems are not yet installed.
-        Rails.logger.warn "Cannot set up plugin routes because engines isn't loaded yet"
-      end
-    end
-    
+        
     def self.deny(*paths)
       paths.each do |path|
         redirections[convert_redirection_to_regex(path)] = :deny
