@@ -18,7 +18,11 @@ class Admin::PluginsController < Admin::BaseController
   end
   
   protected
+  
     def find_plugin
       @plugin = Mephisto::Plugin[params[:id]]
     end
+    
+    alias authorized? global_admin?
+
 end
