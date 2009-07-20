@@ -157,6 +157,10 @@ class SiteValidationsTest < ActiveSupport::TestCase
       s.valid?
       assert s.errors.on(:host), "host valid with #{host}"
     end
+    ['foo.com', 'tapajos.me', 'en.tapajos.me', 'tapajos.com.br'].each do |host|
+      s.host = host
+      assert s.valid?, "host invalid with #{host}"
+    end
   end
   
   test "should require valid search path" do
